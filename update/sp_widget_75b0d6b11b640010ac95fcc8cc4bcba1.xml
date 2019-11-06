@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($scope, $rootScope, spModal, $http) {
+	/* widget controller */
+	var c = this;
+	c.editSaveCaption = 'Edit';
+	c.savable = false;
+	$rootScope.$on('propSelected', function(event, val){		
+		c.propertyId = val.number;
+		$http(
+			{
+				method: 'GET',
+				url: 'https://dev93211.service-now.com/api/x_58872_needit/properties/' + c.propertyId,
+				headers: {
+					Accept: 'application/json'
+				}
+			}
+		).success(
+			function(data, status, headers, config){
+				c.property = data.result;
+				c.property.url = 'http://localhost/' + c.property.url; 
+			}
+		).error(
+			function(data, status, headers, config){
+				console.log(data);
+				console.log(status);
+				console.log(headers);
+				console.log(config);
+			}
+		)
+	});
+
+	c.editSave = function(){
+		if(c.savable){
+			//save function
+			$http.put(
+				'https://dev93211.service-now.com/api/x_58872_needit/properties/' + c.propertyId,
+				c.property				
+			).success(
+				function(data, status, headers, config){
+					spModal.alert('Property saved!!')
+				}
+			);
+			console.log('Save function called');
+			$rootScope.$emit('propertySaved', c.property);
+		}else{
+			//edit function
+			c.propertyBackup = c.property;
+		}
+		c.editSaveToggle();
+	};
+
+	c.editSaveToggle = function(){
+		if(c.savable){			
+			c.editSaveCaption = 'Edit';
+			$rootScope.$emit('propertyEditable', 
+				{
+					'number': c.property.number,
+					'selected': false				
+				}
+			);
+		}else{
+			c.editSaveCaption = 'Save';
+			$rootScope.$emit('propertyEditable', 
+				{
+					'number': c.property.number,
+					'selected': true				
+				}
+			);
+		}
+		c.savable = !c.savable;
+	};
+
+	c.cancel = function(){
+		c.property = c.propertyBackup;
+		c.editSaveToggle();
+	};
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.div-subcell{
+  padding: 10px;
+  margin: 10px;
+}
+
+.align-right{
+  text-align: right;
+}
+
+input{
+  padding:8px;
+  display:inline;
+  border:none;
+  border-bottom:1px solid #ccc;
+  width:100%
+}
+
+.content-centre{
+  justify-content: center; 
+}
+
+.div-container {
+  display: block;
+}
+
+.div-row {
+  display: flex;
+}
+
+.div-cell {
+  display: flex;
+}
+
+img {
+  display: inline;
+  width: 100%;
+  height: auto;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>property_details</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Property Details</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-10-18 04:31:29</sys_created_on>
+        <sys_id>75b0d6b11b640010ac95fcc8cc4bcba1</sys_id>
+        <sys_mod_count>73</sys_mod_count>
+        <sys_name>Property Details</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_widget_75b0d6b11b640010ac95fcc8cc4bcba1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-10-28 23:37:03</sys_updated_on>
+        <template><![CDATA[<div ng-if="c.property">
+  <div class="div-container">
+    <div class="div-row">
+      <div class="div-cell">
+        <div class="align-right div-subcell">
+          Number:
+        </div>
+        <div class="div-subcell">
+          <input type="text" ng-disabled=true ng-model="c.property.number">
+        </div>
+      </div>
+      <div class="div-cell">
+        <div class="align-right div-subcell">
+          Title:
+        </div>
+        <div class="div-subcell">
+          <input type="text" ng-disabled="!c.savable" ng-model="c.property.title">
+        </div>
+      </div>
+    </div>
+    <div class="div-row">
+      <div class="div-cell">
+        <div class="align-right div-subcell">
+          Address:
+        </div>
+
+        <div class="div-subcell">
+          <input ng-disabled="!c.savable" ng-model="c.property.address"/>
+        </div>
+
+      </div>  
+      <div class="div-cell">
+        <div class="align-right div-subcell">
+          Owner:
+        </div>
+        <div class="div-subcell">
+          <input type="text" ng-disabled="!c.savable" ng-model="c.property.owner">
+        </div>
+      </div>
+    </div>
+
+    <div class="div-row">
+      <div class="div-cell">
+        <img src={{c.property.url}}>
+      </div>
+    </div>
+    <div class="div-row">
+      <div class="div-subcell content-centre" colspan="2">
+        <button ng-click="c.editSave()">
+          {{c.editSaveCaption}}
+        </button>
+      </div>
+      <div class="div-subcell content-centre" colspan="2">
+        <button ng-show="c.savable" ng-click="c.cancel()">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>

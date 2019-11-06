@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.Property</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Property</name>
+        <script><![CDATA[var Property = Class.create();
+Property.prototype = {
+	initialize: function() {
+	},
+	getList: function(){
+		var properties = [];
+		var rec = new GlideRecord('x_58872_needit_property');
+		rec.query();
+		while(rec.next()){
+			var prop = {};		
+			prop.number = rec.getValue('number');
+			prop.title = rec.getValue('title');
+			prop.address = rec.getValue('address');		
+			properties.push(prop);		
+		}
+		
+		var reportService = new PropertyReport();
+		var propRatings = reportService.getReportRatings();
+		var p;
+		for(p in properties){
+			var ratingList = propRatings[properties[p].number];
+			if(ratingList){
+				properties[p].ratings = ratingList;
+			}			
+		}
+		return properties;
+	},
+	getListById: function(number){
+		var rec = new GlideRecord('x_58872_needit_property');
+		rec.addQuery('number', number);
+		rec.query();		
+		var prop = {};
+		if(rec.next()){		
+			prop.number = rec.getValue('number');
+			prop.title = rec.getValue('title');
+			prop.owner = rec.getValue('owner');
+			prop.address = rec.getValue('address');
+			prop.url = rec.getValue('imageurl');
+		}
+		return prop;
+	},
+	updateProperty: function(property){
+		var rec = new GlideRecord('x_58872_needit_property');
+		rec.addQuery('number', property.number);
+		rec.query();
+		if(rec.next()){
+			rec.setValue('title', property.title);
+			rec.setValue('owner', property.owner);
+			rec.setValue('address', property.address);
+			rec.update();
+		}
+		return property;
+	},
+	type: 'Property'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-10-17 00:58:30</sys_created_on>
+        <sys_id>3fd5d8251ba00010ac95fcc8cc4bcb94</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>Property</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_3fd5d8251ba00010ac95fcc8cc4bcb94</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-10-28 03:28:20</sys_updated_on>
+    </sys_script_include>
+</record_update>

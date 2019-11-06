@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function($rootScope, $http) {
+	/* widget controller */
+	var c = this;
+	c.chartDrawn = false;
+	c.snurl = 'https://dev93211.service-now.com/api/x_58872_needit/propertyreport?columns=title&columns=rating';
+	c.chartData = [];
+	c.chartLabels = [];
+
+	c.drawChart = function(){
+		//Draw the chart for the first time
+		var ctx = document.getElementById('myChart');
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: [],
+				datasets: [{
+					label: 'Inspection Ratings',
+					data: [],					
+					borderColor: 'rgba(54, 162, 235, 1)',
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				},
+				elements: {
+					line: {
+						tension: 0
+					}
+				}
+			}
+		});
+		c.chart = myChart;
+	}
+
+	c.updateChart = function(dataSet, labels){		
+		//Update the chart using new data set
+		console.log('update chart is called');
+		console.log(dataSet);
+		console.log(labels);
+		
+		//console.log("Before " + c.chart.data.labels.length)
+		while(c.chart.data.labels.length > 0){
+			c.chart.data.labels.pop();
+		}
+		//console.log("After " + c.chart.data.labels.length)
+		
+		
+		while(c.chart.data.datasets[0].data.length > 0){
+			c.chart.data.datasets[0].data.pop();
+		}	
+		//c.chart.update();
+		for(var i = 0; i < labels.length; i++){
+			c.chart.data.labels.push(labels[i]);
+		}
+		
+		for(var j = 0; j < dataSet.length; j++){
+			c.chart.data.datasets[0].data.push(dataSet[j]);
+		}
+		console.log(c.chart.data.labels);
+		console.log(c.chart.data.datasets[0].data);
+		
+		//labels.forEach(function(value){
+		//	c.chart.data.labels.push(value);
+		//})
+		//dataSet.forEach(function(value){
+		//	c.chart.data.datasets[0].data.push(value);
+		//})		
+		c.chart.update();
+	}
+
+	c.fetchData = function(prop){
+		var propertyNum = prop.number;
+		var u = c.snurl + '&propnum=' + propertyNum;		
+		$http.get(c.snurl + '&propnum=' + propertyNum).success(
+			function(data, status, header, config){
+				var dataSet = [];
+				var labels = [];
+				for(var i = 0; i < data.result.length; i++){
+					var rec = data.result[i];
+					dataSet.push(parseInt(rec.rating));
+					labels.push(rec.title);
+				}
+				c.updateChart(dataSet, labels);
+			}
+		)
+	}
+
+
+	$rootScope.$on('propSelected', function(event, data){
+		c.propTitle = data.title;
+		if(!c.chartDrawn){		
+			c.drawChart();
+			c.chartDrawn = true;
+		}
+		c.fetchData(data);
+	});
+
+
+
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>h3 {
+  text-align: center;  
+  font-weight: bold;  
+}
+
+div {
+  color: darkcyan;
+  display: inline;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>inspection_rating_chart</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Inspection Rating Chart</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-10-22 04:46:56</sys_created_on>
+        <sys_id>cf9a72031b640010ac95fcc8cc4bcb40</sys_id>
+        <sys_mod_count>64</sys_mod_count>
+        <sys_name>Inspection Rating Chart</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sp_widget_cf9a72031b640010ac95fcc8cc4bcb40</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-10-24 01:16:27</sys_updated_on>
+        <template><![CDATA[<h3 ng-if="c.propTitle">
+  Business Name: <div>{{c.propTitle}}</div>
+</h3>
+<canvas id="myChart" width="400" height="400"></canvas>
+]]></template>
+    </sp_widget>
+</record_update>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_widget_dependency">
+    <m2m_sp_widget_dependency action="INSERT_OR_UPDATE">
+        <sp_dependency display_value="CustomChartJS">29198bcf1b640010ac95fcc8cc4bcb55</sp_dependency>
+        <sp_widget display_value="Inspection Rating Chart">cf9a72031b640010ac95fcc8cc4bcb40</sp_widget>
+        <sys_class_name>m2m_sp_widget_dependency</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-10-22 05:54:08</sys_created_on>
+        <sys_id>eff947431ba40010ac95fcc8cc4bcb87</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>CustomChartJS.Inspection Rating Chart</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>m2m_sp_widget_dependency_eff947431ba40010ac95fcc8cc4bcb87</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-10-22 05:54:08</sys_updated_on>
+    </m2m_sp_widget_dependency>
+</record_update>
