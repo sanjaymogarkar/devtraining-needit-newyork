@@ -70,7 +70,7 @@
             <sys_user/>
             <type>.end_split</type>
         </sys_ui_element>
-        <sys_ui_section action="INSERT_OR_UPDATE">
+        <sys_ui_section action="DELETE">
             <caption/>
             <header>false</header>
             <name>x_58872_needit_m2m_inspection_c_properties</name>

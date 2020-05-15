@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Inspection Report Details" max_length="40" name="x_58872_needit_inspection_report_details" type="collection">
+    <element label="Inspection Report Details" max_length="40" name="x_58872_needit_inspection_report_details" sizeclass="0" type="collection">
         <element label="Comment" max_length="40" name="comment" type="string"/>
         <element label="Criteria Number" max_length="40" name="criteria_number" type="string"/>
         <element label="Report Number" max_length="40" name="report_number" type="string"/>

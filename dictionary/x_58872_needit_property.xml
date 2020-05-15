@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Property" max_length="40" name="x_58872_needit_property" type="collection">
+    <element label="Property" max_length="40" name="x_58872_needit_property" sizeclass="6" type="collection">
         <element label="Address" max_length="200" name="address" type="string"/>
         <element label="ImageUrl" max_length="40" name="imageurl" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Property Id" max_length="40" name="number" type="string"/>
