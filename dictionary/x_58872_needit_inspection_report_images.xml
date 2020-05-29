@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Inspection Report Images" max_length="40" name="x_58872_needit_inspection_report_images" sizeclass="0" type="collection">
+    <element label="Inspection Report Images" max_length="40" name="x_58872_needit_inspection_report_images" type="collection">
         <element label="Image Url" mandatory="true" max_length="100" name="image_url" type="string"/>
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="Report Criteria" max_length="40" name="report_criteria" type="string"/>

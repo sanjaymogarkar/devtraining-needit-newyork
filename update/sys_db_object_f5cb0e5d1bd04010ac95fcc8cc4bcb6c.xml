@@ -27,9 +27,9 @@
         <sys_id>f5cb0e5d1bd04010ac95fcc8cc4bcb6c</sys_id>
         <sys_mod_count>1</sys_mod_count>
         <sys_name>Property</sys_name>
-        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_package display_value="TabletPoC" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
-        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope display_value="TabletPoC">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_db_object_f5cb0e5d1bd04010ac95fcc8cc4bcb6c</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2019-10-04 04:39:45</sys_updated_on>

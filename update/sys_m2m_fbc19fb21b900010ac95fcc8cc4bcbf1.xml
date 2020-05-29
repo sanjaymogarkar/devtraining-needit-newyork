@@ -12,9 +12,9 @@
         <sys_id>fbc19fb21b900010ac95fcc8cc4bcbf1</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>x_58872_needit_m2m_inspection_c_properties</sys_name>
-        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_package display_value="TabletPoC" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
-        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope display_value="TabletPoC">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_m2m_fbc19fb21b900010ac95fcc8cc4bcbf1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
         <sys_updated_on>2019-10-09 01:35:50</sys_updated_on>

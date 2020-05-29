@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element label="Qualification" max_length="40" name="x_58872_needit_qualification" sizeclass="0" type="collection">
-        <element label="id" max_length="40" name="id" reference="x_58872_needit_master_table" type="integer"/>
+    <element label="Qualification" max_length="40" name="x_58872_needit_qualification" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="id" max_length="40" name="id" reference="x_58872_needit_master_table" type="integer"/>
         <element label="qualification" max_length="40" name="qualification" type="string"/>
     </element>
 </database>

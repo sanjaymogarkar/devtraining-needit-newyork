@@ -19,7 +19,7 @@
     </sp_row>
     <sys_update_version action="INSERT_OR_UPDATE">
         <action>DELETE</action>
-        <application display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</application>
+        <application display_value="TabletPoC">6ead8e780f603200cd674f8ce1050ed1</application>
         <file_path/>
         <instance_id>613b8314dbf733802f68c59705961942</instance_id>
         <instance_name>dev93211</instance_name>
@@ -52,10 +52,10 @@
         <sys_metadata>b4e7c7c11ba00010ac95fcc8cc4bcb0c</sys_metadata>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>1</sys_name>
-        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_package display_value="TabletPoC" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_parent/>
         <sys_policy/>
-        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope display_value="TabletPoC">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
         <sys_update_name>sp_row_b4e7c7c11ba00010ac95fcc8cc4bcb0c</sys_update_name>
         <sys_update_version display_value="sp_row_b4e7c7c11ba00010ac95fcc8cc4bcb0c">954ccb451ba00010ac95fcc8cc4bcba0</sys_update_version>

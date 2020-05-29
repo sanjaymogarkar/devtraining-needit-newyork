@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity">
+    <oauth_entity action="DELETE">
+        <access>public</access>
+        <access_token_lifespan>1800</access_token_lifespan>
+        <active>true</active>
+        <auth_code_lifespan>60</auth_code_lifespan>
+        <auth_url/>
+        <certificate_url/>
+        <client_id>34f0efa2b83010109c8f0dfb104ddd6c</client_id>
+        <client_secret>YNFhMkCRaQtQWa26MLe0XQ==</client_secret>
+        <client_uuid>f0f0efa2db301010acf79235ca96196c</client_uuid>
+        <code_challenge_method>S256</code_challenge_method>
+        <comments/>
+        <default_grant_type>password</default_grant_type>
+        <id_token_lifespan>86400</id_token_lifespan>
+        <logo_url/>
+        <message_signature_lifespan>60</message_signature_lifespan>
+        <name>PropertyApp</name>
+        <oauth_api_script/>
+        <protocol_name/>
+        <public_client>false</public_client>
+        <redirect_url/>
+        <refresh_token_lifespan>8640000</refresh_token_lifespan>
+        <refresh_token_url/>
+        <revoke_token_url/>
+        <salt/>
+        <send_client_credentials_as>request_body_parameter</send_client_credentials_as>
+        <skip_authorize>false</skip_authorize>
+        <sys_class_name>oauth_entity</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-19 00:44:50</sys_created_on>
+        <sys_id>b4f0efa2db301010acf79235ca96196c</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>PropertyApp</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>oauth_entity_b4f0efa2db301010acf79235ca96196c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-19 01:14:27</sys_updated_on>
+        <token_url/>
+        <type>client</type>
+        <use_mutual_auth>false</use_mutual_auth>
+        <user/>
+    </oauth_entity>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="TabletPoC">6ead8e780f603200cd674f8ce1050ed1</application>
+        <file_path/>
+        <instance_id>8afb342ddbe93bc049eac597059619ad</instance_id>
+        <instance_name>dev85867</instance_name>
+        <name>oauth_entity_b4f0efa2db301010acf79235ca96196c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="oauth_entity"><oauth_entity action="INSERT_OR_UPDATE"><access>public</access><access_token_lifespan>1800</access_token_lifespan><active>true</active><auth_code_lifespan>60</auth_code_lifespan><auth_url/><certificate_url/><client_id>34f0efa2b83010109c8f0dfb104ddd6c</client_id><client_secret>YNFhMkCRaQtQWa26MLe0XQ==</client_secret><client_uuid>f0f0efa2db301010acf79235ca96196c</client_uuid><code_challenge_method>S256</code_challenge_method><comments/><default_grant_type>password</default_grant_type><id_token_lifespan>86400</id_token_lifespan><logo_url/><message_signature_lifespan>60</message_signature_lifespan><name>PropertyApp</name><oauth_api_script/><protocol_name/><public_client>false</public_client><redirect_url/><refresh_token_lifespan>8640000</refresh_token_lifespan><refresh_token_url/><revoke_token_url/><salt/><send_client_credentials_as>request_body_parameter</send_client_credentials_as><skip_authorize>false</skip_authorize><sys_class_name>oauth_entity</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2020-05-19 00:44:50</sys_created_on><sys_id>b4f0efa2db301010acf79235ca96196c</sys_id><sys_mod_count>2</sys_mod_count><sys_name>PropertyApp</sys_name><sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package><sys_policy/><sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope><sys_update_name>oauth_entity_b4f0efa2db301010acf79235ca96196c</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2020-05-19 01:14:27</sys_updated_on><token_url/><type>client</type><use_mutual_auth>false</use_mutual_auth><user/></oauth_entity></record_update>]]></payload>
+        <payload_hash>1345623682</payload_hash>
+        <record_name>PropertyApp</record_name>
+        <reverted_from/>
+        <source>2b0a4682dbe30010b48261ca0b9619e9</source>
+        <source_table>sys_update_set</source_table>
+        <state>current</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-19 01:14:27</sys_created_on>
+        <sys_id>82d7a366db301010acf79235ca96191f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1722a7f08890000001</sys_recorded_at>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-19 01:14:27</sys_updated_on>
+        <type>Application Registries</type>
+        <update_guid>cad7a366cd3010108f2ce959fe90c01e</update_guid>
+        <update_guid_history>cad7a366cd3010108f2ce959fe90c01e:1345623682,85c12be2ba301010c194d47922d2bcc0:1935555059,dc11efa2f730101093af585022733473:1345623682</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="PropertyApp">131a6b2adb301010acf79235ca961911</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-05-19 01:24:22</sys_created_on>
+        <sys_db_object display_value="" name="oauth_entity">oauth_entity</sys_db_object>
+        <sys_id>ad575283416c4d80a2a2c52da32c6f84</sys_id>
+        <sys_metadata>b4f0efa2db301010acf79235ca96196c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PropertyApp</sys_name>
+        <sys_package display_value="TabletPoC" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="TabletPoC">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_scope_delete display_value="">94872a8897db403e8ee69a431de2fca4</sys_scope_delete>
+        <sys_update_name>oauth_entity_b4f0efa2db301010acf79235ca96196c</sys_update_name>
+        <sys_update_version display_value="oauth_entity_b4f0efa2db301010acf79235ca96196c">82d7a366db301010acf79235ca96191f</sys_update_version>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-05-19 01:24:22</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
